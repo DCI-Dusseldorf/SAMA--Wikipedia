@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.main{
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  
+
+}
+
+.aside{
+ box-sizing: border-box;
+//  float: right;
+ margin: 100px;
+ text-align: center;
+ width: 900px;
+ padding-left: 300px;
+}
+
+h1{
+  text-align: center;
+}
+.homepage{
+  padding-top: 80px;
+  padding-left: 30px;
+
+}
