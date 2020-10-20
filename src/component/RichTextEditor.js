@@ -31,8 +31,8 @@ export default function RichTextEditor() {
         }}
         onChange={setText}
       />
-  <Button onClick={save}></Button>
-  <Button onClick ={cancel}></Button>
+  <Button onClick={save}>Save</Button>
+  <Button onClick ={cancel}>Cancel</Button>
   </>
      );
 }
