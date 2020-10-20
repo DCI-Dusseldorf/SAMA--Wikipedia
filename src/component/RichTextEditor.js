@@ -1,24 +1,22 @@
+import Button          from 'react-bootstrap/Button';
+import React           from 'react';
+import ReactSummernote from 'react-summernote';
 
-import Button from 'react-bootstrap/Button'
-import React, { Component } from 'react';
+ 
+export default function RichTextEditor() {
+ const[text, setText] =React.useState("");
+ function cancel(){
 
- import ReactSummernote from 'react-summernote';
-   
-
-function RichTextEditor (){
-  const [text, setText] = React.useState('');
-  function cancel(){
-    window.location = ''
-  }
-  function save (){
-
-  console.log(text);
-}
-return (
-  <>
+ }
+ function save(){
+   console.log(text);
+ }
+    return (
+      <>
       <ReactSummernote
         value="Default value"
         options={{
+          lang: 'ru-RU',
           height: 350,
           dialogsInBody: true,
           toolbar: [
@@ -31,11 +29,16 @@ return (
             ['view', ['fullscreen', 'codeview']]
           ]
         }}
-        onchange= {setText}
-         />
-        <Button onClick={save}>save</Button>
-   );
-      }
+        onChange={setText}
+      />
+  <Button onClick={save}>Save</Button>
+  <Button onClick ={cancel}>Cancel</Button>
+  </>
+     );
+}
 
-    export default RichTextEditor;
-       
+
+
+
+
+
