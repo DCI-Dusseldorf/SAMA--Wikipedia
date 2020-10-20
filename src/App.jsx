@@ -1,5 +1,5 @@
 import React from 'react';
-import RichTextEditor from './component/RichTextEditor'
+import RichTextEditor from './component/RichTextEditor';
 
 
 
