@@ -1,6 +1,5 @@
 import React from 'react';
-import Navigation from './components/Navigation/Navigations';
-
+import RichTextEditor from './component/RichTextEditor'
 
 
 
@@ -10,14 +9,9 @@ import './App.scss';
 function App() {
   return (
       <div>
-        <Navigation />
+         <RichTextEditor/>
       </div>
-        
-       
-       
-     
-  
-  );
+   );
 }
 
 export default App;
