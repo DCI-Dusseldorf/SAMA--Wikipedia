@@ -27,6 +27,7 @@ h1 {
   overflow-x: hidden;
   padding-top: 20px;
   font-family: "Slabo 27px", serif;
+  border-right: 1px solid gray;
 }
 
 .sidenav a {
@@ -44,7 +45,8 @@ h1 {
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  height: 51px;
+  display: flex;
 }
 
 .Logo img {
@@ -60,6 +62,7 @@ h1 {
 .topnav {
   background-color: #333;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Style the links inside the navigation bar */
@@ -95,18 +98,19 @@ h1 {
   }
 }
 form.search input[type="text"] {
-  padding: 10px;
+  padding: 12px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
   width: 80%;
   background: #f1f1f1;
+  margin: auto;
+  max-width: 300px;
 }
 
 form.search button {
-  float: left;
-  width: 20%;
-  padding: 10px;
+  width: 10%;
+  padding: 12px;
   background: #2196f3;
   color: white;
   font-size: 17px;
@@ -123,4 +127,11 @@ form.search::after {
   content: "";
   clear: both;
   display: table;
+}
+form.search {
+  margin: auto 175px;
+}
+.editor {
+  width: 100%;
+  position: relative;
 }

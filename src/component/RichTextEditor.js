@@ -1,44 +1,42 @@
-import Button          from 'react-bootstrap/Button';
-import React           from 'react';
-import ReactSummernote from 'react-summernote';
+import Button from "react-bootstrap/Button";
+import React from "react";
+import ReactSummernote from "react-summernote";
 
- 
-export default function RichTextEditor() {
- const[text, setText] =React.useState("");
- function cancel(){
+const addImage = (fileList) => {
+  const reader = new FileReader();
+  reader.onloadend = () => {
+    ReactSummernote.insertImage(reader.result);
+  };
+  reader.readAsDataURL(fileList[0]);
+};
 
- }
- function save(){
-   console.log(text);
- }
-    return (
-      <>
+export default function RichTextEditor(props) {
+  function cancel() {}
+  function save() {}
+  return (
+    <>
       <ReactSummernote
-        value="Default value"
+        className="editor"
+        value={props.content}
         options={{
-          lang: 'ru-RU',
+          lang: "ru-RU",
           height: 350,
           dialogsInBody: true,
           toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview']]
-          ]
+            ["style", ["style"]],
+            ["font", ["bold", "underline", "clear"]],
+            ["fontname", ["fontname"]],
+            ["para", ["ul", "ol", "paragraph"]],
+            ["table", ["table"]],
+            ["insert", ["link", "picture", "video"]],
+            ["view", ["fullscreen", "codeview"]],
+          ],
         }}
-        onChange={setText}
+        onImageUpload={addImage}
+        // onChange={setText}
       />
-  <Button onClick={save}></Button>
-  <Button onClick ={cancel}></Button>
-  </>
-     );
+      <Button onClick={save}>Save</Button>
+      <Button onClick={cancel}>Cancel</Button>
+    </>
+  );
 }
-
-
-
-
-
-
