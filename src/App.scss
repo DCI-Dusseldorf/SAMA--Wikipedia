@@ -7,7 +7,6 @@ body {
   font-family: "Lato", sans-serif;
 }
 .aside {
-  box-sizing: border-box;
   text-align: center;
   width: 100%;
 }
@@ -39,7 +38,8 @@ h1 {
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #5f5858;
+  cursor: hand;
 }
 
 .main {
@@ -66,28 +66,39 @@ h1 {
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.topnav li {
   float: right;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  list-style: none;
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.topnav li:hover {
   background-color: #ddd;
   color: black;
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
+.topnav li.active {
   background-color: grey;
   color: white;
 }
-.display {
-  display: none;
+// .display {
+//   display: none;
+// }
+.home {
+  margin-top: 70px;
+  text-align: center;
+  height: 300px;
+}
+.homeImage {
+  margin: 10px auto 530px;
+  width: 200px;
+  height: 200px;
 }
 @media screen and (max-height: 450px) {
   .sidenav {
@@ -97,18 +108,23 @@ h1 {
     font-size: 18px;
   }
 }
-form.search input[type="text"] {
+.search {
   padding: 12px;
   font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
+  border: 1px solid transparent;
+  margin-left: 39%;
+  width: 40%;
+  height: 80%;
+}
+form.title input[type="text"] {
+  padding: 12px;
+  font-size: 17px;
+  border: 1px solid transparent;
   background: #f1f1f1;
-  margin: auto;
-  max-width: 300px;
+  width: 80%;
 }
 
-form.search button {
+form.title button {
   width: 10%;
   padding: 12px;
   background: #2196f3;
@@ -119,17 +135,19 @@ form.search button {
   cursor: pointer;
 }
 
-form.search button:hover {
+form.title button:hover {
   background: #0b7dda;
 }
 
-form.search::after {
+form.title::after {
   content: "";
   clear: both;
   display: table;
 }
-form.search {
-  margin: auto 175px;
+form.title {
+  margin-left: 160px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 .editor {
   width: 100%;
