@@ -1,17 +1,17 @@
-import React, {useRef} from 'react';
+// import React, {useRef} from 'react';
 
-export default function Searchbar(){
+// export default function Searchbar(){
 
-  function getSearchValue(searchValue){
-console.log(searchValue.target.value);
-  }
+//   function getSearchValue(searchValue){
+//     let value = searchValue.target.value;
+//   }
  
 
-return <input
-  type="text"
-  placeholder="Title.."
-  name="search"
-  className="search"
-  onChange={getSearchValue}
-  />
-}
+// return <input
+//   type="text"
+//   placeholder="Title.."
+//   name="search"
+//   className="search"
+//   onChange={getSearchValue}
+//   />
+// }

@@ -21,10 +21,10 @@ export default function RichTextEditor(props) {
   
   function cancel() {}
   function save() {
-       let contentObj = {};
-       contentObj.id = Math.floor(Date.now()/1000);
-       contentObj.title = titleref.current.value;
-       contentObj.content = content;
+       let contentObj     = {};
+       contentObj.id      = Math.floor(Date.now()/1000);
+       contentObj.title   = titleref.current.value;
+       contentObj.content =content;
        props.setArticle([contentObj, ...props.article]);
   }
   return (

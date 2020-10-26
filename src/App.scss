@@ -8,7 +8,7 @@ body {
 }
 .aside {
   text-align: center;
-  width: 100%;
+  margin-left: 170px;
 }
 
 h1 {
@@ -29,7 +29,7 @@ h1 {
   border-right: 1px solid gray;
 }
 
-.sidenav a {
+.sidenav li {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
@@ -37,7 +37,7 @@ h1 {
   display: block;
 }
 
-.sidenav a:hover {
+.sidenav li:hover {
   color: #5f5858;
   cursor: hand;
 }
@@ -87,11 +87,9 @@ h1 {
   background-color: grey;
   color: white;
 }
-// .display {
-//   display: none;
-// }
 .home {
   margin-top: 70px;
+  margin-left: -15%;
   text-align: center;
   height: 300px;
 }
