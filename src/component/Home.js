@@ -1,11 +1,11 @@
 import React from "react";
 
-function Donate() {
+function Home() {
   return (
     <div>
-      <h1>Donate</h1>
+      <h1>Home</h1>
     </div>
   );
 }
 
-export default Donate;
+export default Home;

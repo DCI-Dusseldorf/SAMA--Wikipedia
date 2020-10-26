@@ -1,29 +1,15 @@
 import React from 'react';
-import RichTextEditor from './component/RichTextEditor';
-import AboutWiki from './component/AboutWiki';
-import Contact from './component/Contact';
-import Donate from './component/Donate'
-
-
-
-
-
-
-
-
-
-
 
 import './App.scss';
+import Content from './component/Content';
+import Sidebar from './component/Sidebar';
 
 function App() {
-   const [hash, setHash] = React.useState(window.location.hash);
-   window.onhashchange = function(){
-      setHash(window.location.hash);
-   }
+  
   return (
       <div>
-         <RichTextEditor id = {hash} />
+         <Sidebar/>
+          <Content/>
       </div>
    );
 }
