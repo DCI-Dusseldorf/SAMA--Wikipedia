@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
 
 function Article({ articles, setArticles }) {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function Article({ articles, setArticles }) {
   return (
     <div>
       <h1>{article.title}</h1>
-      <h2>{article.description}</h2>
+      <h2>{ReactHtmlParser(article.description)}</h2>
       <Link to={`/edit/${article.id}`}>
         <button>edit</button>
       </Link>

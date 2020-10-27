@@ -8,7 +8,6 @@ import Donate from "./Donate";
 import Add from "./Add";
 import Edit from "./Edit";
 import Article from "./Article";
-import App from "../App";
 
 function Content({ articles, setArticles }) {
   return (
