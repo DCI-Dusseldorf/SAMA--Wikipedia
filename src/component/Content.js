@@ -8,19 +8,34 @@ import Donate from "./Donate";
 import Add from "./Add";
 import Edit from "./Edit";
 import Article from "./Article";
+import App from "../App";
 
-function Content() {
+function Content({ articles, setArticles }) {
   return (
     <div className="main">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/articles" component={Articles} />
+        <Route
+          path="/articles"
+          render={() => <Articles articles={articles} />}
+        />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/donate" component={Donate} />
-        <Route path="/add" component={Add} />
-        <Route path="/edit/:id" component={Edit} />
-        <Route path="/:id" component={Article} />
+        <Route
+          path="/add"
+          render={() => <Add articles={articles} setArticles={setArticles} />}
+        />
+        <Route
+          path="/edit/:id"
+          render={() => <Edit articles={articles} setArticles={setArticles} />}
+        />
+        <Route
+          path="/:id"
+          render={() => (
+            <Article articles={articles} setArticles={setArticles} />
+          )}
+        />
       </Switch>
     </div>
   );
