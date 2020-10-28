@@ -4,6 +4,7 @@ import "./App.scss";
 import Content from "./component/Content";
 import Sidebar from "./component/Sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Contact from "./component/Contact";
 
 import Button from "react-bootstrap/Button";
 
@@ -19,6 +20,7 @@ function App() {
     <div>
       <Sidebar />
       <Content articles={articles} setArticles={setArticles} />
+      <Contact />
     </div>
   );
 }
