@@ -1,9 +1,8 @@
-import React from 'react';
+import React    from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App      from './App';
 
 import 'react-summernote/dist/react-summernote.css'; 
-
 import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/tooltip';
@@ -20,5 +19,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
 
