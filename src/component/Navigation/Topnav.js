@@ -16,7 +16,7 @@ export default function Topnav(props) {
         onChange={ e => setSearchValue(e.target.value.toUpperCase()) }     
         />
         <Link to ="/">
-        <li className="active">
+        <li>
           Home
         </li></Link>
         <Link to="/addArticle">

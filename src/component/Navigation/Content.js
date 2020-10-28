@@ -34,7 +34,7 @@ const Display = (props) =>{
     return <>
         <Link to ="/content"><Button color="primary">Back</Button></Link>
         <Link to={`/richtextEditor/${id}`}><Button color="primary">Edit</Button></Link>
-        <Button color="primary" onClick={deleteContent}>Delete</Button>
+        <Link to ="/content"> <Button color="primary" onClick={deleteContent}>Delete</Button></Link>
         <div dangerouslySetInnerHTML={{ __html: content }} />
         </>
 
