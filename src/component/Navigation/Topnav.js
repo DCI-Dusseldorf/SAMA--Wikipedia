@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import Searchbar from './Searchbar'
 
 export default function Topnav(props) {
   const [searchValue, setSearchValue] = useState('');
@@ -8,20 +7,19 @@ export default function Topnav(props) {
   return (
     <>
       <div className="topnav">
-        {/* <Searchbar/> */}
       <input
         type="text"
         placeholder="Title.."
         name="search"
         className="search"
         value ={searchValue}  
-        onChange={ e => setSearchValue(e.target.value) }     
+        onChange={ e => setSearchValue(e.target.value.toUpperCase()) }     
         />
-        <Link to ="/home">
+        <Link to ="/">
         <li className="active">
           Home
         </li></Link>
-        <Link to="/richtextEditor">
+        <Link to="/addArticle">
         <li>New</li></Link>
         <Link to="/searchAndDisplay">
           <li onClick={e =>{

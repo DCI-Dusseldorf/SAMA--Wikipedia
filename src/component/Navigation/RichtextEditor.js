@@ -2,6 +2,9 @@
 import React, {useState, useRef} from "react";
 import ReactSummernote   from "react-summernote";
 import Button            from "react-bootstrap/Button";
+import { useParams, Link } from "react-router-dom";
+import { getArticleById } from './Content';
+
 
 const addImage = (fileList) => {
   const reader = new FileReader();
@@ -12,35 +15,60 @@ const addImage = (fileList) => {
 };
 
 export default function RichTextEditor(props) {
-  const [content, setContent] = useState("");
-  const titleref = useRef('');
+  const params  = useParams();
+  const data = getArticleById(params.id,props.article);
+  const [content, setContent] = useState(data.content);
+  const titleref = useRef(null);
  
   function getTextAreaValue(data) {
   setContent(data);
   }
-  
-  function cancel() {}
+
   function save() {
-       let contentObj     = {};
-       contentObj.id      = Math.floor(Date.now()/1000);
-       contentObj.title   = titleref.current.value;
-       contentObj.content =content;
-       props.setArticle([contentObj, ...props.article]);
+    let contentObj     = {};
+    if(params.id != null){ //Edit functionality
+      console.log(props.article);
+      const index = props.article.findIndex((obj) => obj.id === Number(params.id));
+      console.log(index);
+      contentObj = props.article[index];
+      contentObj.id      = Number(params.id);
+      contentObj.title   = titleref.current.value.toUpperCase();
+      contentObj.content = content;
+      props.article[index]=contentObj;
+      props.setArticle([...props.article]);
+    }else{ //New functionality
+      contentObj.id      = Math.floor(Date.now()/1000);
+      contentObj.title   = titleref.current.value.toUpperCase();
+      contentObj.content = content;
+         if(contentObj.title == null){
+           alert('Please enter the Title');
+         }else{
+           if(props.article.every((obj)=>obj.title !== contentObj.title)){
+            props.setArticle([contentObj, ...props.article]);
+           }else{
+            alert('Data available already');
+           }
+         }
+    }
+    
   }
   return (
     <>
-     <form className="title">
+     <form className="title"> 
         <input
           type="text"
           placeholder="Title.."
           name="search"
+          defaultValue = {data.title}
           ref={titleref}
           ></input>
-        
       </form>
       <ReactSummernote
+        onInit={() => {
+          const editArea = document.querySelector('.note-editable');
+          editArea.innerHTML = Object.values({ content});
+        }}
         className="editor"
-        value={content}
         options={{
           lang: "ru-RU",
           height: 350,
@@ -57,9 +85,13 @@ export default function RichTextEditor(props) {
         }}
         onImageUpload={addImage}
         onChange={getTextAreaValue}
-      />
-      <Button onClick={save}>Save</Button>
-      <Button onClick={cancel}>Cancel</Button>
+      /><Link to = "/content">
+      <Button onClick={e =>{if(titleref.current.value === ""){
+        alert('Please enter title');
+      }else{
+        save(); 
+      }} }>Save</Button></Link>
+      <Link to={`/content/display/${params.id}`}><Button>Cancel</Button></Link>
     </>
   );
 }

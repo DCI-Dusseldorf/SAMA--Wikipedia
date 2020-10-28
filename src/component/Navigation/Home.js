@@ -1,9 +1,9 @@
 
 import React from 'react';
-import Button            from "react-bootstrap/Button";
-import {InputGroup,FormControl }            from "react-bootstrap";
+
 
 function Home() {
+
     return ( <>
         <div className="home">
             <h1>SaMaPedia</h1>
@@ -14,6 +14,7 @@ function Home() {
         /> </div>
         </>
     );
+    
 }
 
 export default Home;

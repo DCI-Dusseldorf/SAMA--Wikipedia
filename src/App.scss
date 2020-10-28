@@ -9,6 +9,7 @@ body {
 .aside {
   text-align: center;
   margin-left: 170px;
+  margin-top: 10px;
 }
 
 h1 {
@@ -102,10 +103,11 @@ h1 {
   .sidenav {
     padding-top: 15px;
   }
-  .sidenav a {
+  .sidenav li {
     font-size: 18px;
   }
 }
+
 .search {
   padding: 12px;
   font-size: 17px;
@@ -150,4 +152,12 @@ form.title {
 .editor {
   width: 100%;
   position: relative;
+}
+.listgroupItem > a {
+  text-decoration: none;
+  color: black;
+}
+.listgroupitem > a:hover {
+  background: grey;
+  color: red;
 }
