@@ -10,7 +10,7 @@ export default function Sidenav(props) {
           src = "/wikipedia.jpeg"
           alt = "Wikipedia Logo"
         />
-        <h2>SaMapedia</h2>
+        <h3>SaMapedia</h3>
       </section>
 
       <section>

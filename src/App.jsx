@@ -1,20 +1,20 @@
 import "./App.scss";
 
 import React, {useEffect, useState}             from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { Switch, Route, useHistory} from 'react-router-dom';
 
 import Home             from "./component/Navigation/Home";
 import About            from "./component/Navigation/About";
 import Topnav           from './component/Navigation/Topnav';
 import Sidenav          from './component/Navigation/Sidenav';
 import Content          from './component/Navigation/Content';
-import SearchAndDisplay from './component/Navigation/SearchAndDisplay';
 import RichtextEditor   from './component/Navigation/RichtextEditor';
 import RandomArticle    from './component/Navigation/RandomArticle';
 
 export default function App() {
 
   const [article, setArticle] = useState(JSON.parse(localStorage.getItem("myWiki"))||[{id:0,title:'Home',content:'Welcome to SaMaPedia'}]);
+  const history = useHistory();
   let dataDisplay = '';
   let dataRandom = '';
 
@@ -24,19 +24,40 @@ export default function App() {
   },[article]
   )
 
+  //Phonetic search using soundex
+
+  var soundex = function(s) {
+    var a = s.toLowerCase().split(''),
+        f = a.shift(),
+        r = '',
+        codes = { a: '', e: '', i: '', o: '', u: '', b: 1, f: 1, p: 1, v: 1, c: 2, g: 2, j: 2, k: 2, q: 2, s: 2, x: 2, z: 2, d: 3, t: 3, l: 4, m: 5, n: 5, r: 6 };
+    r = f +
+        a
+        .map(function(v, i, a) {
+            return codes[v]
+        })
+        .filter(function(v, i, a) {
+            return ((i === 0) ? v !== codes[f] : v !== a[i - 1]);
+        })
+        .join('');
+    return (r + '000').slice(0, 4).toUpperCase();
+};
+ 
+
   // To display content on search
   function displayContent(searchValue){ 
     dataDisplay ='';
 
     article.forEach((obj)=>{
-      if(obj.title === searchValue){
+      if(soundex(obj.title) == soundex(searchValue)){
         dataDisplay = obj.content;
+        history.push(`/content/display/${obj.id}`);
         }
       }
     )
 
     if(dataDisplay === ''){
-        dataDisplay = "<h2>Content not available</h2>";
+      history.push(`/content/notAvailable`);
     }
   }
   
@@ -48,7 +69,7 @@ export default function App() {
   // main render
   return (
     <>
-    <Router>
+    
       {/* Side bar */}
       <Sidenav  article       = {article} 
                 setArticle    = {setArticle} 
@@ -96,13 +117,9 @@ export default function App() {
                     />
                   }
           />
-          <Route  path    = "/searchAndDisplay" 
-                  render  = {(props) => <SearchAndDisplay {...props} 
-                  data    = {dataDisplay} />}
-          />
         </Switch>
       </div>
-    </Router>   
+    
     </>
   );
 }
