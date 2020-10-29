@@ -15,7 +15,8 @@ import RandomArticle    from './component/Navigation/RandomArticle';
 export default function App() {
 
   const [article, setArticle] = useState(JSON.parse(localStorage.getItem("myWiki"))||[{id:0,title:'Home',content:'Welcome to SaMaPedia'}]);
-  let data = '';
+  let dataDisplay = '';
+  let dataRandom = '';
 
   // Dynamic interaction with Local storage
   useEffect(() => {
@@ -25,23 +26,23 @@ export default function App() {
 
   // To display content on search
   function displayContent(searchValue){ 
-    data ='';
+    dataDisplay ='';
 
     article.forEach((obj)=>{
       if(obj.title === searchValue){
-        data = obj.content;
+        dataDisplay = obj.content;
         }
       }
     )
 
-    if(data === ''){
-        data = "<h2>Content not available</h2>";
+    if(dataDisplay === ''){
+        dataDisplay = "<h2>Content not available</h2>";
     }
   }
   
   // To display random article
   function randomDisplay(randomIndex){ 
-      data = article[randomIndex].content ;
+      dataRandom = article[randomIndex].content ;
   }
   
   // main render
@@ -84,18 +85,21 @@ export default function App() {
           </Route> 
           <Route  path    = "/content">
             <Content  article    = {article} 
-                      setArticle = {setArticle}>{article.title}
+                      setArticle = {setArticle}>
+              {article.title}
             </Content>
           </Route>
+          <Route  path    = "/randomArticle"    
+                  exact
+                  render  = {(props) => <RandomArticle {...props} 
+                  data    = {dataRandom} 
+                    />
+                  }
+          />
           <Route  path    = "/searchAndDisplay" 
                   render  = {(props) => <SearchAndDisplay {...props} 
-                  data    = {data} />}
+                  data    = {dataDisplay} />}
           />
-          <Route  path    = "/randomArticle"    
-                  render  = {(props) => <RandomArticle {...props} 
-                  data    = {data} 
-                    />
-                  }/>
         </Switch>
       </div>
     </Router>   

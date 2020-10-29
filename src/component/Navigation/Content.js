@@ -8,7 +8,7 @@ export function getArticleById(id, article){
     let data ='';
 
     article.forEach((obj)=>{
-      if(obj.id == id){
+      if(obj.id === Number(id) ){
         data = obj;
       }
     })
@@ -58,16 +58,13 @@ const Display = (props) =>{
 // Get title(s) from Local storage
 const getTitle = ({id,title,content},index) =>  {
 
-  return  <ListGroup variant="flush">
-            <ListGroup.Item className = "listgroupItem"
+  return  <ListGroup.Item className = "listgroupItem"
                             as        = "li" 
                             key       = {index}>
               <a  href = {'/content/display/'+id}
                   key  = {index}>{title}
               </a> 
-              <br/>
-            </ListGroup.Item>
-          </ListGroup>
+          </ListGroup.Item>
 }
 
 //Content Component
@@ -75,16 +72,18 @@ export default function Content(props) {
 
     const data =  props.article; 
 
-    return <div >
+    return <div className = "contentList">
       <Switch>
         <Route  path = "/content" 
                 exact>{data.map(getTitle)}
         </Route>
         <Route path = "/content/display/:id">
+        <ListGroup>
           <Display article    = {props.article} 
                   setArticle  = {props.setArticle} 
                   data        = {data}>
           </Display>
+        </ListGroup>
         </Route>
       </Switch>
     </div>;
