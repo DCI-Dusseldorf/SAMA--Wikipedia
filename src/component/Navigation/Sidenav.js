@@ -14,21 +14,21 @@ export default function Sidenav(props) {
       </section>
 
       <section>
-        <Link to = "/">
+        <Link to = "/" style={{ textDecoration: 'none' }}>
           <li>Main page</li>
         </Link>
         
-        <Link to = "/content">
+        <Link to = "/content" style={{ textDecoration: 'none' }}>
           <li>Contents</li>
         </Link>
         
-        <Link to = "/randomArticle">
+        <Link to = "/randomArticle" style={{ textDecoration: 'none' }}>
           <li onClick = {e =>{
               props.randomDisplay(Math.floor(Math.random()*(props.article.length-1)));
               }}>Random article</li>
         </Link>
         
-        <Link to = "/about">
+        <Link to = "/about" style={{ textDecoration: 'none' }}>
           <li>About Wikipedia</li>
         </Link>
         

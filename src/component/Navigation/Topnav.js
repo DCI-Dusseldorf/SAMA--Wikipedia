@@ -27,7 +27,7 @@ export default function Topnav(props) {
         <Link to = "/searchAndDisplay">
           <li onClick = {e =>
             {
-              if(searchValue == ''){
+              if(searchValue === ''){
                 alert('Please enter a title to search');
               }
               else{
@@ -37,7 +37,10 @@ export default function Topnav(props) {
             }
           }>Search</li>
         </Link>
+        
       </div>
     </>
   );
 }
+
+
