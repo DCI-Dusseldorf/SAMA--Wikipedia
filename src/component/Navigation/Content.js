@@ -85,6 +85,9 @@ export default function Content(props) {
           </Display>
         </ListGroup>
         </Route>
+        <Route path="/content/notAvailable">
+        <h2>Content not available</h2>
+        </Route>
       </Switch>
     </div>;
 }
