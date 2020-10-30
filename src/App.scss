@@ -165,25 +165,7 @@ form.title {
     position: fixed;
   }
 }
-// .search {
-//   padding: 12px;
-//   font-size: 17px;
-//   border: 1px solid transparent;
-//   position: relative;
-//   width: 80%;
-//   height: 80%;
-// }
 
-// .search input {
-//   width: 40%;
-//   text-indent: 30px;
-// }
-// .search .fa-search {
-//   position: absolute;
-//   top: 20px;
-//   left: 18px;
-//   font-size: 15px;
-// }
 .search {
   position: relative;
   color: #aaa;
@@ -210,4 +192,20 @@ form.title {
   font-size: 25px;
   z-index: 1;
   color: rgb(105, 101, 101);
+}
+
+.listTitles {
+  width: 250px;
+  height: 100px;
+  font-size: 16px;
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  z-index: 1;
+  overflow: scroll;
+  display: none;
+}
+.titles {
+  display: block;
 }

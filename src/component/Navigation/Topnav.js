@@ -8,6 +8,14 @@ export default function Topnav(props) {
     setShowNav(!showNav);
   };
 
+  function listTitles(){
+    const e = document.querySelector('.listTitles');
+    e.classList.add('titles');
+  }
+
+  function RenderTitles(){ 
+    return <div className="listTitles">{ props.article.map((obj)=> <h6>{obj.title}</h6>)}</div>
+  }
 
   return ( <>
         <Link className="icon" id="myTopnav" onClick={toggleNav}>
@@ -15,7 +23,7 @@ export default function Topnav(props) {
         </Link>
       
       {showNav ? <div className = "topnav" >
-        <div class="search">
+        <div className="search">
           <Link onClick = {e =>
             {
               if(searchValue === ''){
@@ -26,7 +34,7 @@ export default function Topnav(props) {
                 setSearchValue("");
               }
             }
-          }><span class="fa fa-search"></span>
+          }><span className="fa fa-search"></span>
           </Link>
           <input
           type        = "text"
@@ -34,8 +42,10 @@ export default function Topnav(props) {
           name        = "search"
           className   = "search"
           value       = {searchValue}  
-          onChange    = {e => setSearchValue(e.target.value.toUpperCase())}     
+          onChange    = {e => setSearchValue(e.target.value.toUpperCase())} 
+          onFocus     = {listTitles}
           />
+          <RenderTitles />
         </div>
         <span>
         <Link to = "/">
