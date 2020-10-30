@@ -8,14 +8,14 @@ export default function Topnav(props) {
     setShowNav(!showNav);
   };
 
-  function listTitles(){
-    const e = document.querySelector('.listTitles');
-    e.classList.add('titles');
-  }
+  // function listTitles(){
+  //   const e = document.querySelector('.listTitles');
+  //   e.classList.add('titles');
+  // }
 
-  function RenderTitles(){ 
-    return <div className="listTitles">{ props.article.map((obj)=> <h6>{obj.title}</h6>)}</div>
-  }
+  // function RenderTitles(){ 
+  //   return <div className="listTitles">{ props.article.map((obj)=> <h6>{obj.title}</h6>)}</div>
+  // }
 
   return ( <>
         <Link className="icon" id="myTopnav" onClick={toggleNav}>
@@ -43,9 +43,9 @@ export default function Topnav(props) {
           className   = "search"
           value       = {searchValue}  
           onChange    = {e => setSearchValue(e.target.value.toUpperCase())} 
-          onFocus     = {listTitles}
+          // onFocus     = {listTitles}
           />
-          <RenderTitles />
+          {/* <RenderTitles /> */}
         </div>
         <span>
         <Link to = "/">
