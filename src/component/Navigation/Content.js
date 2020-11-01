@@ -1,11 +1,11 @@
 import React                              from 'react';
-import {ListGroup, Button, ButtonGroup}   from "react-bootstrap";
+import {ListGroup,Nav}                    from "react-bootstrap";
 import {Link, Route, Switch, useParams}   from 'react-router-dom';
 
 // Get matched content by id from Local storage
 export function getArticleById(id, article){    
 
-    let data ='';
+    let data = '';
 
     article.forEach((obj)=>{
       if(obj.id === Number(id) ){
@@ -33,33 +33,41 @@ const Display = (props) =>{
   }
 
   return <>
-    <ButtonGroup aria-label = "Basic example">
+      <Nav as="ul" className="contentNav">
+      <Nav.Item as="li">
       <Link to = "/content">
-        <Button color = "primary">Back
-        </Button>
+        Back
       </Link>
-      
-      <Link to = {`/richtextEditor/${id}`}>
-        <Button color = "primary">Edit
-        </Button>
+      </Nav.Item>
+      <Nav.Item as = "li">
+      <Link to     = {`/richtextEditor/${id}`}>
+        Edit
       </Link>
-      
-      <Link to = "/content">
-        <Button color   = "primary" 
-                onClick = {deleteContent}>Delete
-        </Button>
+      </Nav.Item>
+      <Nav.Item as  = "li">
+      <Link to      = "/content"
+            onClick = {deleteContent}>
+        Delete
       </Link>
-    </ButtonGroup>
+      </Nav.Item>
+      </Nav>
     
     <div dangerouslySetInnerHTML = {{ __html: content }} />
   </>
 }
 
+function array_chunk ( array, chunkSize = 5){
+  const chunks = Math.ceil( array.length / chunkSize );
+  const arrays = [];
+  for ( let i = 0; i < chunks; i++ ){
+      arrays.push( array.slice( i * chunkSize, i * chunkSize + chunkSize ) );
+  }
+  return arrays;
+}
+
 // Get title(s) from Local storage
 const getTitle = ({id,title,content},index) =>  {
-
-  return  <ListGroup.Item className = "listgroupItem"
-                            as        = "li" 
+  return  <ListGroup.Item   as        = "li" 
                             key       = {index}>
               <a  href = {'/content/display/'+id}
                   key  = {index}>{title}
@@ -70,28 +78,26 @@ const getTitle = ({id,title,content},index) =>  {
 //Content Component
 export default function Content(props) {
 
-    const data =  props.article; 
+  const data =  props.article; 
 
-    return <div className = "contentList">
-      <Switch>
-        <Route  path = "/content" 
-                exact>{data.map(getTitle)}
+  return <div className = "contentList">
+    <Switch>
+      <Route  path = "/content" 
+              exact>
+        {array_chunk(data).map(chunk => 
+          <ListGroup  variant = "flush" 
+                      style   = {{display:'inline-block'}}>
+                        {chunk.map(getTitle)}</ListGroup >)}
         </Route>
         <Route path = "/content/display/:id">
-        <ListGroup>
           <Display article    = {props.article} 
                   setArticle  = {props.setArticle} 
                   data        = {data}>
           </Display>
-        </ListGroup>
         </Route>
-        <Route path="/content/notAvailable">
+        <Route path = "/content/notAvailable">
         <h2>Content not available</h2>
         </Route>
       </Switch>
     </div>;
 }
-
-
-
-
