@@ -26,11 +26,11 @@ export default function Topnav(props) {
   return ( <>
     
       <div className = "topnav" id="myTopnav" >
-         
+        
         <Link className="icon"  onClick={toggleNav}>
           <i className="fa fa-bars"></i>
         </Link>
-       
+        
         <Link to = "/">
           Home
         </Link>
@@ -39,7 +39,6 @@ export default function Topnav(props) {
           Add
         </Link>
         
-
         <InputGroup className="mb-3">
           <FormControl
             placeholder="Search SaMapedia..."
@@ -63,7 +62,6 @@ export default function Topnav(props) {
             </Button>
           </InputGroup.Append>
         </InputGroup>
-        
       </div> 
     </>
   );

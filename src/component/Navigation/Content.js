@@ -1,11 +1,11 @@
 import React                              from 'react';
-import {ListGroup,Nav}   from "react-bootstrap";
+import {ListGroup,Nav}                    from "react-bootstrap";
 import {Link, Route, Switch, useParams}   from 'react-router-dom';
 
 // Get matched content by id from Local storage
 export function getArticleById(id, article){    
 
-    let data ='';
+    let data = '';
 
     article.forEach((obj)=>{
       if(obj.id === Number(id) ){
@@ -39,13 +39,14 @@ const Display = (props) =>{
         Back
       </Link>
       </Nav.Item>
-      <Nav.Item as="li">
-      <Link to = {`/richtextEditor/${id}`}>
+      <Nav.Item as = "li">
+      <Link to     = {`/richtextEditor/${id}`}>
         Edit
       </Link>
       </Nav.Item>
-      <Nav.Item as="li">
-      <Link to = "/content"onClick = {deleteContent}>
+      <Nav.Item as  = "li">
+      <Link to      = "/content"
+            onClick = {deleteContent}>
         Delete
       </Link>
       </Nav.Item>
@@ -74,17 +75,19 @@ const getTitle = ({id,title,content},index) =>  {
           </ListGroup.Item>
 }
 
-
 //Content Component
 export default function Content(props) {
 
-    const data =  props.article; 
+  const data =  props.article; 
 
-    return <div className = "contentList">
-      <Switch>
-        <Route  path = "/content" 
-                exact>{array_chunk(data).map(chunk => <ListGroup  variant="flush" style={{display:'inline-block'}}>{
-                  chunk.map(getTitle)}</ListGroup >)}
+  return <div className = "contentList">
+    <Switch>
+      <Route  path = "/content" 
+              exact>
+        {array_chunk(data).map(chunk => 
+          <ListGroup  variant = "flush" 
+                      style   = {{display:'inline-block'}}>
+                        {chunk.map(getTitle)}</ListGroup >)}
         </Route>
         <Route path = "/content/display/:id">
           <Display article    = {props.article} 
@@ -92,13 +95,9 @@ export default function Content(props) {
                   data        = {data}>
           </Display>
         </Route>
-        <Route path="/content/notAvailable">
+        <Route path = "/content/notAvailable">
         <h2>Content not available</h2>
         </Route>
       </Switch>
     </div>;
 }
-
-
-
-

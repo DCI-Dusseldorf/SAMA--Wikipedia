@@ -57,6 +57,8 @@ body {
 // }
 .topnav {
   display: flex;
+  flex-direction: row-reverse;
+  float: right;
   padding: 5px;
   background-color: #3366d2;
 }
@@ -132,6 +134,7 @@ form.title {
 .contentNav a {
   padding: 10px;
 }
-.homeAndAdd a {
-  color: white;
+
+.list-group {
+  text-align: left;
 }
