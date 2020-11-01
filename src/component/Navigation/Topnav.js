@@ -1,12 +1,18 @@
 import React, {useState} from "react";
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 import {Link}            from "react-router-dom";
 
 export default function Topnav(props) {
   const [searchValue, setSearchValue] = useState('');
-  const [showNav,setShowNav] = useState(false);
-  const toggleNav = () => {
-    setShowNav(!showNav);
-  };
+
+  function toggleNav() {
+    var topNavElement = document.getElementById("myTopnav");
+    if (topNavElement.className === "topnav") {
+      topNavElement.className += " responsive";
+    } else {
+      topNavElement.className = "topnav";
+    }
+  } 
 
   // function listTitles(){
   //   const e = document.querySelector('.listTitles');
@@ -18,36 +24,13 @@ export default function Topnav(props) {
   // }
 
   return ( <>
-        <Link className="icon" id="myTopnav" onClick={toggleNav}>
+    
+      <div className = "topnav" id="myTopnav" >
+         
+        <Link className="icon"  onClick={toggleNav}>
           <i className="fa fa-bars"></i>
         </Link>
-      
-      {showNav ? <div className = "topnav" >
-        <div className="search">
-          <Link onClick = {e =>
-            {
-              if(searchValue === ''){
-                alert('Please enter a title to search');
-              }
-              else{
-                props.displayContent(searchValue);
-                setSearchValue("");
-              }
-            }
-          }><span className="fa fa-search"></span>
-          </Link>
-          <input
-          type        = "text"
-          placeholder = "Search SaMapedia..."
-          name        = "search"
-          className   = "search"
-          value       = {searchValue}  
-          onChange    = {e => setSearchValue(e.target.value.toUpperCase())} 
-          // onFocus     = {listTitles}
-          />
-          {/* <RenderTitles /> */}
-        </div>
-        <span>
+       
         <Link to = "/">
           Home
         </Link>
@@ -55,9 +38,33 @@ export default function Topnav(props) {
         <Link to = "/addArticle">
           Add
         </Link>
-        </span>
-      </div> : null}
-     
+        
+
+        <InputGroup className="mb-3">
+          <FormControl
+            placeholder="Search SaMapedia..."
+            aria-label="Search SaMapedia..."
+            aria-describedby="basic-addon2"
+            value       = {searchValue}
+            onChange    = {e => setSearchValue(e.target.value.toUpperCase())}
+          />
+          <InputGroup.Append>
+            <Button className ="btn-search" variant="light" onClick = {e =>
+                  {
+                    if(searchValue === ''){
+                      alert('Please enter a title to search');
+                    }
+                    else{
+                      props.displayContent(searchValue);
+                      setSearchValue("");
+                    }
+                  }
+                }><span className="fa fa-search"></span>
+            </Button>
+          </InputGroup.Append>
+        </InputGroup>
+        
+      </div> 
     </>
   );
 }

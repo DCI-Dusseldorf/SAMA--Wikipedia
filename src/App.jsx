@@ -49,7 +49,7 @@ export default function App() {
     dataDisplay ='';
 
     article.forEach((obj)=>{
-      if(soundex(obj.title) == soundex(searchValue)){
+      if(soundex(obj.title) === soundex(searchValue)){
         dataDisplay = obj.content;
         history.push(`/content/display/${obj.id}`);
         }
