@@ -5,6 +5,7 @@ import {Link}            from "react-router-dom";
 export default function Topnav(props) {
   const [searchValue, setSearchValue] = useState('');
  const filtered = props.article.filter(item => item.title.match(searchValue));
+ 
   function toggleNav() {
     var topNavElement = document.getElementById("myTopnav");
     if (topNavElement.className === "topnav") {
@@ -62,9 +63,8 @@ export default function Topnav(props) {
           </InputGroup>
         </div>
         <div className ="links">
-        <Link to ="#"className="icon"  onClick={toggleNav}>
-          <i className="fa fa-bars"></i>
-        </Link>
+
+        
         
         <Link to = "/" onClick={toggleNav}>
           Home
@@ -72,6 +72,10 @@ export default function Topnav(props) {
         
         <Link to = "/addArticle" onClick={toggleNav}>
           Add
+        </Link>
+
+        <Link to ="#"className="icon"  onClick={toggleNav}>
+          <i className="fa fa-bars"></i>
         </Link>
         </div>
         
