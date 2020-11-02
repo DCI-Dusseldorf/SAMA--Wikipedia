@@ -20,48 +20,53 @@ export default function Topnav(props) {
   // }
 
   // function RenderTitles(){ 
-  //   return <div className="listTitles">{ props.article.map((obj)=> <h6>{obj.title}</h6>)}</div>
+  //   return <div className="listTitles">{ props.article.map((obj,index)=> <h6 key={index}>{obj.title}</h6>)}</div>
   // }
 
   return ( <>
     
       <div className = "topnav" id="myTopnav" >
-        
-        <Link className="icon"  onClick={toggleNav}>
+        <div>
+          <InputGroup >
+            <FormControl
+              placeholder="Search SaMapedia..."
+              aria-label="Search SaMapedia..."
+              aria-describedby="basic-addon2"
+              value       = {searchValue}
+              onChange    = {e => setSearchValue(e.target.value.toUpperCase())}
+              // onFocus     ={listTitles}
+            />
+            <InputGroup.Append>
+              <Button className ="btn-search" variant="light" onClick = {e =>
+                    {
+                      if(searchValue === ''){
+                        alert('Please enter a title to search');
+                      }
+                      else{
+                        props.displayContent(searchValue);
+                        setSearchValue("");
+                      }
+                    }
+                  }><span className="fa fa-search"></span>
+              </Button>
+            </InputGroup.Append>
+          </InputGroup>
+        </div>
+        <div className ="links">
+        <Link to ="#"className="icon"  onClick={toggleNav}>
           <i className="fa fa-bars"></i>
         </Link>
         
-        <Link to = "/">
+        <Link to = "/" onClick={toggleNav}>
           Home
         </Link>
         
-        <Link to = "/addArticle">
+        <Link to = "/addArticle" onClick={toggleNav}>
           Add
         </Link>
+        </div>
         
-        <InputGroup className="mb-3">
-          <FormControl
-            placeholder="Search SaMapedia..."
-            aria-label="Search SaMapedia..."
-            aria-describedby="basic-addon2"
-            value       = {searchValue}
-            onChange    = {e => setSearchValue(e.target.value.toUpperCase())}
-          />
-          <InputGroup.Append>
-            <Button className ="btn-search" variant="light" onClick = {e =>
-                  {
-                    if(searchValue === ''){
-                      alert('Please enter a title to search');
-                    }
-                    else{
-                      props.displayContent(searchValue);
-                      setSearchValue("");
-                    }
-                  }
-                }><span className="fa fa-search"></span>
-            </Button>
-          </InputGroup.Append>
-        </InputGroup>
+        {/* <RenderTitles/> */}
       </div> 
     </>
   );

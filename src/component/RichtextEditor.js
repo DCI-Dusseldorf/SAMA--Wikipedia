@@ -1,7 +1,7 @@
 
 import React, {useState, useRef}  from "react";
 import ReactSummernote            from "react-summernote";
-import {Button,Form}                     from "react-bootstrap";
+import {Button,Form}              from "react-bootstrap";
 import { useParams, Link }        from "react-router-dom";
 import { getArticleById }         from './Content';
 
@@ -92,8 +92,8 @@ export default function RichTextEditor(props) {
       onChange      = {getTextAreaValue}
     />
       
-    <Link to = "/content">
-      <Button onClick = {e =>{if(titleref.current.value === ""){
+    <Link to = {params.id != null ? `/content/display/${ params.id}`:`/content`}>
+      <Button className="m-3" onClick = {e =>{if(titleref.current.value === ""){
             alert('Please enter title');
           }
           else{

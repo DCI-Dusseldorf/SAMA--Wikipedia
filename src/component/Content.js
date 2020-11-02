@@ -1,5 +1,5 @@
 import React                              from 'react';
-import {ListGroup,Nav}                    from "react-bootstrap";
+import {Card, ListGroup,Nav}                    from "react-bootstrap";
 import {Link, Route, Switch, useParams}   from 'react-router-dom';
 
 // Get matched content by id from Local storage
@@ -56,7 +56,7 @@ const Display = (props) =>{
   </>
 }
 
-function array_chunk ( array, chunkSize = 5){
+function array_chunk ( array, chunkSize = 10){
   const chunks = Math.ceil( array.length / chunkSize );
   const arrays = [];
   for ( let i = 0; i < chunks; i++ ){
@@ -80,14 +80,13 @@ export default function Content(props) {
 
   const data =  props.article; 
 
-  return <div className = "contentList">
+  return <div >
     <Switch>
       <Route  path = "/content" 
               exact>
-        {array_chunk(data).map(chunk => 
-          <ListGroup  variant = "flush" 
-                      style   = {{display:'inline-block'}}>
-                        {chunk.map(getTitle)}</ListGroup >)}
+        <div className = "d-flex">{array_chunk(data).map(chunk => <Card className="w-25 m-2">
+          <ListGroup  variant = "flush" >
+                        {chunk.map(getTitle)}</ListGroup > </Card> )}</div>
         </Route>
         <Route path = "/content/display/:id">
           <Display article    = {props.article} 
