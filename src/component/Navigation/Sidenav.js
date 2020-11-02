@@ -12,7 +12,7 @@ export default function Sidenav(props) {
         />
         <h3>SaMapedia</h3>
       </section>
-
+      <hr/>
       <section>
         <Link to = "/" style={{ textDecoration: 'none' }}>
           <li>Main page</li>
@@ -29,7 +29,7 @@ export default function Sidenav(props) {
         </Link>
         
         <Link to = "/about" style={{ textDecoration: 'none' }}>
-          <li>About Wikipedia</li>
+          <li>About SaMapedia</li>
         </Link>
         
         <li>Contact us</li>

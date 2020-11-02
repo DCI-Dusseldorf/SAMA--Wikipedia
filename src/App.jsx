@@ -3,13 +3,13 @@ import "./App.scss";
 import React, {useEffect, useState}             from 'react';
 import { Switch, Route, useHistory} from 'react-router-dom';
 
-import Home             from "./component/Navigation/Home";
-import About            from "./component/Navigation/About";
 import Topnav           from './component/Navigation/Topnav';
 import Sidenav          from './component/Navigation/Sidenav';
-import Content          from './component/Navigation/Content';
-import RichtextEditor   from './component/Navigation/RichtextEditor';
-import RandomArticle    from './component/Navigation/RandomArticle';
+import Home             from "./component/Home";
+import About            from "./component/About";
+import Content          from './component/Content';
+import RichtextEditor   from './component/RichtextEditor';
+import RandomArticle    from './component/RandomArticle';
 
 export default function App() {
 
