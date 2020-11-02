@@ -139,3 +139,21 @@ form.title {
   background-color: lightgray;
   color: #fff;
 }
+.input-group {
+  position: relative;
+}
+
+.input-group ul {
+  display: block;
+  position: absolute;
+  top: 100%;
+  background: var(--light);
+  height: 50vh;
+  overflow-y: auto;
+  height: fit-content;
+  z-index: 1;
+}
+
+.input-group ul li {
+  display: block;
+}
