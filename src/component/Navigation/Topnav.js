@@ -4,7 +4,7 @@ import {Link}            from "react-router-dom";
 
 export default function Topnav(props) {
   const [searchValue, setSearchValue] = useState('');
-
+ const filtered = props.article.filter(item => item.title.match(searchValue));
   function toggleNav() {
     var topNavElement = document.getElementById("myTopnav");
     if (topNavElement.className === "topnav") {
@@ -28,6 +28,15 @@ export default function Topnav(props) {
       <div className = "topnav" id="myTopnav" >
         <div>
           <InputGroup >
+          { searchValue === '' ? null : <ul>{
+          filtered
+          .map( item => <li>
+            <a onClick={
+              e => setSearchValue(item.title)
+            }>{
+              item.title
+            }</a></li> )
+              }</ul> }
             <FormControl
               placeholder="Search SaMapedia..."
               aria-label="Search SaMapedia..."
