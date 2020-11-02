@@ -1,7 +1,7 @@
 
 import React, {useState, useRef}  from "react";
 import ReactSummernote            from "react-summernote";
-import Button                     from "react-bootstrap/Button";
+import {Button,Form}                     from "react-bootstrap";
 import { useParams, Link }        from "react-router-dom";
 import { getArticleById }         from './Content';
 
@@ -56,16 +56,14 @@ export default function RichTextEditor(props) {
   
   return(
     <>
-    <form className  = "title"> 
-      <input
-        type          = "text"
-        placeholder   = "Enter Title..."
-        name          = "search"
-        defaultValue  = {data.title}
-        ref           = {titleref}
-      >
-      </input>
-    </form>
+    <Form.Group>
+      <Form.Control       type  = "text" 
+                    placeholder = "Enter Title..."  
+                           name = "search"
+                  defaultValue  = {data.title}
+                            ref = {titleref} />
+      <br />
+    </Form.Group>
 
     <ReactSummernote
       onInit={() => {
