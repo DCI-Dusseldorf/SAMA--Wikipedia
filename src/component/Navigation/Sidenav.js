@@ -1,5 +1,6 @@
 import React  from "react";
 import {Link} from "react-router-dom";
+import logo   from "../../wikipedia.jpeg";
 
 export default function Sidenav(props) {
 
@@ -7,7 +8,7 @@ export default function Sidenav(props) {
     <div className = "sidenav">
       <section className = "Logo">
         <img
-          src = "/wikipedia.jpeg"
+          src = {logo}
           alt = "Wikipedia Logo"
         />
         <h3>SaMapedia</h3>
