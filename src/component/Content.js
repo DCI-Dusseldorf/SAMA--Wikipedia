@@ -84,7 +84,7 @@ export default function Content(props) {
     <Switch>
       <Route  path = "/content" 
               exact>
-        <div className = "d-flex">{array_chunk(data).map(chunk => <Card className="w-25 m-2">
+        <div className = "d-flex">{array_chunk(data).map((chunk,index) => <Card key={index} className="w-25 m-2">
           <ListGroup  variant = "flush" >
                         {chunk.map(getTitle)}</ListGroup > </Card> )}</div>
         </Route>
