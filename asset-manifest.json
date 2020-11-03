@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/SAMA--Wikipedia/static/css/main.02a37416.chunk.css",
+    "main.js": "/SAMA--Wikipedia/static/js/main.f34cb97e.chunk.js",
+    "main.js.map": "/SAMA--Wikipedia/static/js/main.f34cb97e.chunk.js.map",
+    "runtime-main.js": "/SAMA--Wikipedia/static/js/runtime-main.4ccff07c.js",
+    "runtime-main.js.map": "/SAMA--Wikipedia/static/js/runtime-main.4ccff07c.js.map",
+    "static/css/2.bd0f6615.chunk.css": "/SAMA--Wikipedia/static/css/2.bd0f6615.chunk.css",
+    "static/js/2.978137f5.chunk.js": "/SAMA--Wikipedia/static/js/2.978137f5.chunk.js",
+    "static/js/2.978137f5.chunk.js.map": "/SAMA--Wikipedia/static/js/2.978137f5.chunk.js.map",
+    "index.html": "/SAMA--Wikipedia/index.html",
+    "precache-manifest.0aed35b2300003d372a29a46773b34ee.js": "/SAMA--Wikipedia/precache-manifest.0aed35b2300003d372a29a46773b34ee.js",
+    "service-worker.js": "/SAMA--Wikipedia/service-worker.js",
+    "static/css/2.bd0f6615.chunk.css.map": "/SAMA--Wikipedia/static/css/2.bd0f6615.chunk.css.map",
+    "static/css/main.02a37416.chunk.css.map": "/SAMA--Wikipedia/static/css/main.02a37416.chunk.css.map",
+    "static/js/2.978137f5.chunk.js.LICENSE.txt": "/SAMA--Wikipedia/static/js/2.978137f5.chunk.js.LICENSE.txt",
+    "static/media/react-summernote.css": "/SAMA--Wikipedia/static/media/summernote.f694db69.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ccff07c.js",
+    "static/css/2.bd0f6615.chunk.css",
+    "static/js/2.978137f5.chunk.js",
+    "static/css/main.02a37416.chunk.css",
+    "static/js/main.f34cb97e.chunk.js"
+  ]
+}
