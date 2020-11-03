@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SAMA--Wikipedia/precache-manifest.7593436f5bc8930e83aeb33d1e169f9e.js"
+  "/SAMA--Wikipedia/precache-manifest.e5512b98546eb7c5f87e6ed73c502dbd.js"
 );
 
 self.addEventListener('message', (event) => {

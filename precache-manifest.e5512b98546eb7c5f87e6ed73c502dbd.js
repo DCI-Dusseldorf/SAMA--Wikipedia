@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5659464ecf9ced2f4e3e7760c5cc804f",
+    "revision": "38999cf5c093e598a32d21c69594ae80",
     "url": "/SAMA--Wikipedia/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SAMA--Wikipedia/static/css/2.bd0f6615.chunk.css"
   },
   {
-    "revision": "aa37515a196f5d3050e0",
+    "revision": "882aac42516d03fec1f1",
     "url": "/SAMA--Wikipedia/static/css/main.02a37416.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SAMA--Wikipedia/static/js/2.d4ac6005.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aa37515a196f5d3050e0",
-    "url": "/SAMA--Wikipedia/static/js/main.3a99c313.chunk.js"
+    "revision": "882aac42516d03fec1f1",
+    "url": "/SAMA--Wikipedia/static/js/main.c5c64b4d.chunk.js"
   },
   {
     "revision": "c474072e9f0e5db051d2",

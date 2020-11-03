@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SAMA--Wikipedia/static/css/main.02a37416.chunk.css",
-    "main.js": "/SAMA--Wikipedia/static/js/main.3a99c313.chunk.js",
-    "main.js.map": "/SAMA--Wikipedia/static/js/main.3a99c313.chunk.js.map",
+    "main.js": "/SAMA--Wikipedia/static/js/main.c5c64b4d.chunk.js",
+    "main.js.map": "/SAMA--Wikipedia/static/js/main.c5c64b4d.chunk.js.map",
     "runtime-main.js": "/SAMA--Wikipedia/static/js/runtime-main.4ccff07c.js",
     "runtime-main.js.map": "/SAMA--Wikipedia/static/js/runtime-main.4ccff07c.js.map",
     "static/css/2.bd0f6615.chunk.css": "/SAMA--Wikipedia/static/css/2.bd0f6615.chunk.css",
     "static/js/2.d4ac6005.chunk.js": "/SAMA--Wikipedia/static/js/2.d4ac6005.chunk.js",
     "static/js/2.d4ac6005.chunk.js.map": "/SAMA--Wikipedia/static/js/2.d4ac6005.chunk.js.map",
     "index.html": "/SAMA--Wikipedia/index.html",
-    "precache-manifest.7593436f5bc8930e83aeb33d1e169f9e.js": "/SAMA--Wikipedia/precache-manifest.7593436f5bc8930e83aeb33d1e169f9e.js",
+    "precache-manifest.e5512b98546eb7c5f87e6ed73c502dbd.js": "/SAMA--Wikipedia/precache-manifest.e5512b98546eb7c5f87e6ed73c502dbd.js",
     "service-worker.js": "/SAMA--Wikipedia/service-worker.js",
     "static/css/2.bd0f6615.chunk.css.map": "/SAMA--Wikipedia/static/css/2.bd0f6615.chunk.css.map",
     "static/css/main.02a37416.chunk.css.map": "/SAMA--Wikipedia/static/css/main.02a37416.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.bd0f6615.chunk.css",
     "static/js/2.d4ac6005.chunk.js",
     "static/css/main.02a37416.chunk.css",
-    "static/js/main.3a99c313.chunk.js"
+    "static/js/main.c5c64b4d.chunk.js"
   ]
 }
