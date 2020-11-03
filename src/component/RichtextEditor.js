@@ -57,11 +57,11 @@ export default function RichTextEditor(props) {
   return(
     <>
     <Form.Group>
-      <Form.Control       type  = "text" 
-                    placeholder = "Enter Title..."  
-                           name = "search"
-                  defaultValue  = {data.title}
-                            ref = {titleref} />
+      <Form.Control   type          = "text" 
+                      placeholder   = "Enter Title..."  
+                      name          = "search"
+                      defaultValue  = {data.title}
+                      ref           = {titleref} />
       <br />
     </Form.Group>
 
