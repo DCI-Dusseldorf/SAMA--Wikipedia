@@ -13,10 +13,13 @@ import $ from 'jquery';
 window.$ = $;
 window.jQuery = $;
 
+// if window location contains github we need to add the base path, else router will point
+// to the wron directory
+const basename = window.location.toString().match('github') ? '/SAMA--Wikipedia/' : null;
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={basename}>
       <App />
     </Router>
   </React.StrictMode>,
