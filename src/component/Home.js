@@ -1,5 +1,6 @@
 
 import React from 'react';
+import logo  from "../wikipedia.jpeg";
 
 export default function Home(){
 
@@ -8,7 +9,7 @@ export default function Home(){
             <h1>SaMaPedia</h1>
             <h3>The Free Encyclopedia</h3>
             <img    className   = "homeImage"
-                    src         = "../wikipedia.jpeg"
+                    src         = {logo}
                     alt         = "Wikipedia Logo"/>
         </div>
         </>
